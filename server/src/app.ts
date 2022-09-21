@@ -22,9 +22,8 @@ class Server {
 		this.app.use('/api',this.router)
 		//Integrate Errorhandler model
 		this.initializeErrorhandler();
-		//Make server Listen
-		this.listen();
 	}
+
 	private initializeErrorhandler(){
 		this.app.use((err: ErrorHandler, req: express.Request, res: express.Response, next: express.NextFunction) => {
 			res.status(err.statusCode || 500).json({
@@ -34,7 +33,7 @@ class Server {
 			});
 		  })
 	}
-	private listen() {
+	public listen() {
 		const port =  process.env.APP_PORT || 5000;
 		this.app.listen(port,():void =>{
 			console.log(`Server Running on: ${port}`)
@@ -50,3 +49,4 @@ class Server {
 //Initialize the server.
 const server = new Server();
 server.init();
+server.listen();
