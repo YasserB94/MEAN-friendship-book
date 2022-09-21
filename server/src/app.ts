@@ -1,10 +1,6 @@
-//Root File of Backend Express App
-
 //imports from node modules
 import dotenv from 'dotenv';
 import express from 'express';
-
-
 //My imports
 import MasterRouter from './routers/MasterRouter';
 import ErrorHandler from './models/ErrorHandler';
@@ -23,7 +19,6 @@ class Server {
 		//Integrate Errorhandler model
 		this.initializeErrorhandler();
 	}
-
 	private initializeErrorhandler(){
 		this.app.use((err: ErrorHandler, req: express.Request, res: express.Response, next: express.NextFunction) => {
 			res.status(err.statusCode || 500).json({
@@ -43,9 +38,8 @@ class Server {
 				console.log(`To set the server port use: "APP_PORT=XXXX"`)
 			}
 		})
-	}
-	
-  }
+	}	
+}
 //Initialize the server.
 const server = new Server();
 server.init();
