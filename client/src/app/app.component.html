@@ -1,4 +1,12 @@
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+<app-header></app-header>
+<main>
+  <section>
+    <app-create-friend
+      (friendCreated)="onFriendCreated($event)"
+    ></app-create-friend>
+  </section>
+  <section>
+    <app-friends-list [friends]="storedFriends"></app-friends-list>
+  </section>
+</main>
 <router-outlet></router-outlet>

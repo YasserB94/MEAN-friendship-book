@@ -1,0 +1,12 @@
+textarea{
+    resize: none!important;
+}
+mat-card-content{
+    display: flex;
+    flex-direction: column;
+}
+mat-card-actions{
+    @apply    
+    flex
+    justify-end
+}

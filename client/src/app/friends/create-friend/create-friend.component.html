@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-title>Become a Coding Friend!</mat-card-title>
+  <mat-card-subtitle>We'd love to have you :D</mat-card-subtitle>
+  <mat-card-content>
+    <mat-form-field>
+      <mat-label>Your name...</mat-label>
+      <input matInput type="text" [(ngModel)]="enteredName" required />
+      <mat-error>Awww, we won't bite, what's your name ?</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Pick a Programming Language</mat-label>
+      <mat-select [(ngModel)]="choosenFavourite" required>
+        <mat-option *ngFor="let lang of programmingLanguages" [value]="lang">{{
+          lang
+        }}</mat-option>
+      </mat-select>
+      <mat-error>Please choose a language!</mat-error>
+      <mat-hint
+        >Preferably one you would like to share something about</mat-hint
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Leave a message:</mat-label>
+      <textarea
+        matInput
+        placeholder="Oooh,... Senpai is about to leave some wisdom!"
+        [(ngModel)]="enteredMessage"
+        required
+      ></textarea>
+      <mat-error
+        >We know you are awesome, you must have some spare awesomeness to
+        share...</mat-error
+      >
+    </mat-form-field>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-stroked-button color="primary" (click)="onSubmit()">
+      submit
+    </button>
+  </mat-card-actions>
+</mat-card>
