@@ -1,13 +1,13 @@
 <mat-card>
   <mat-card-title>Share some wisdom!</mat-card-title>
-  <form [formGroup]="createWisdomForm">
+  <form [formGroup]="createWisdomForm" (submit)="onSubmit()">
     <mat-form-field appearance="outline">
       <mat-label>Name:</mat-label>
-      <input matInput />
+      <input formControlName="name" matInput />
     </mat-form-field>
     <mat-form-field appearance="fill">
       <mat-label>Programming Language</mat-label>
-      <mat-select>
+      <mat-select formControlName="programmingLanguage">
         <mat-option *ngFor="let lang of programmingLang" [value]="lang">{{
           lang
         }}</mat-option>
@@ -15,10 +15,10 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Wisdom</mat-label>
-      <textarea matInput></textarea>
+      <textarea matInput formControlName="widsom"></textarea>
     </mat-form-field>
     <mat-card-actions>
-      <button mat-raised-button color="primary">Share</button>
+      <button mat-raised-button color="primary" type="submit">Share</button>
     </mat-card-actions>
   </form>
 </mat-card>
