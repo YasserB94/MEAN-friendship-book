@@ -1,10 +1,41 @@
-<mat-toolbar>
-  <span>Coding Wisdom</span>
-  <nav>
-    <ul>
-      <li><a routerLink="/home">Home</a></li>
-      <li><a routerLink="/about">About</a></li>
-      <li><a routerLink="/contribute">Contribute</a></li>
-    </ul>
-  </nav>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <a routerLink="/home">Coding Wisdom</a>
+    <button class="hamburger" (click)="toggleNav()" mat-button>
+      <span [class.nav-open-first-line]="navOpen"></span>
+      <span [class.nav-open-middle-line]="navOpen"></span>
+      <span [class.nav-open-last-line]="navOpen"></span>
+    </button>
+    <a
+      href="https://github.com/YasserB94/MEAN-friendship-book"
+      target="_blank"
+      mat-stroked-button
+      class="github"
+      >View SourceCode</a
+    >
+  </mat-toolbar-row>
+  <mat-toolbar-row class="nav-toolbar" [class.nav-toolbar-open]="navOpen">
+    <nav [class.nav-open]="navOpen">
+      <ul>
+        <li>
+          <a (click)="toggleNav()" routerLinkActive="active" routerLink="/home"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a (click)="toggleNav()" routerLinkActive="active" routerLink="/about"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            (click)="toggleNav()"
+            routerLinkActive="active"
+            routerLink="/contribute"
+            >Contribute</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </mat-toolbar-row>
 </mat-toolbar>

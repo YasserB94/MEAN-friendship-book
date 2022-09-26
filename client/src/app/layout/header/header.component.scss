@@ -1,11 +1,107 @@
+mat-toolbar{
+    position: sticky;
+    top: 0;
+    @apply
+    z-10
+    border-b-2
+    shadow-md
+}
+mat-toolbar-row{
+    @apply
+    w-full
+}
+.github{
+    @apply
+    hidden
+    md:block
+    ml-auto
+}
+.active{
+    @apply
+    underline
+    text-pink-200
+}
+.nav-toolbar{
+
+    @apply
+    text-center
+    h-0
+    md:h-fit
+    transition-all
+    pb-1
+}
+.nav-toolbar-open{
+    @apply
+    h-40
+    md:h-fit
+}
 nav{
-    width: 75%;
-    margin: 0 auto;
+    @apply
+    hidden
+    mx-auto
+    md:ml-auto
+    lg:mx-auto
+    md:block
+}
+.nav-open{
+    @apply
+    block
+    opacity-100
 }
 nav ul{
-    display: flex;
-    width: 100%;
+    @apply
+    md:flex
 }
 nav ul li{
-    margin: 0 1rem;
+    @apply
+    mx-2
+    uppercase
+    text-base
+}
+nav ul li a{
+    @apply
+    underline-offset-4
+    transition-all
+    hover:underline
+    hover:text-pink-200
+    hover:animate-bounce
+}
+.hamburger{
+    @apply
+    flex
+    justify-center
+    md:hidden
+    ml-auto
+    my-auto
+}
+.hamburger span{
+    transition: all 300ms ease-in-out;
+    @apply
+    block
+    h-0.5
+    w-5
+    my-1
+    bg-white
+    
+}
+.hamburger .nav-open-first-line{
+    @apply
+    opacity-90
+    rotate-45
+    translate-y-1.5
+    rounded-lg
+
+}
+.hamburger .nav-open-middle-line{
+    @apply
+    origin-center
+    scale-x-0
+    rounded-xl
+}
+.hamburger .nav-open-last-line{
+    @apply
+    opacity-70
+    -rotate-45
+    -translate-y-1.5
+    rounded-lg
 }
