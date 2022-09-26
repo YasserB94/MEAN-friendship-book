@@ -1,12 +1,6 @@
 <app-header></app-header>
 <main>
-  <section>
-    <app-create-friend
-      (friendCreated)="onFriendCreated($event)"
-    ></app-create-friend>
-  </section>
-  <section>
-    <app-friends-list [friends]="storedFriends"></app-friends-list>
-  </section>
+  <router-outlet></router-outlet>
+  <h1>HEllo</h1>
 </main>
-<router-outlet></router-outlet>
+<app-footer></app-footer>

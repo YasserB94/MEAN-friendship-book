@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-title>Share some wisdom!</mat-card-title>
+  <form [formGroup]="createWisdomForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Name:</mat-label>
+      <input matInput />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Programming Language</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let lang of programmingLang" [value]="lang">{{
+          lang
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Wisdom</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">Share</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

@@ -1,6 +1,5 @@
 main{
     @apply
-    content-center
     md:w-9/12
     md:mx-auto
     lg:w-7/12
@@ -8,4 +7,5 @@ main{
 section{
     @apply
     my-3
+    mx-auto
 }

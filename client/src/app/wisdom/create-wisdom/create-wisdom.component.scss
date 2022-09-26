@@ -1,0 +1,21 @@
+mat-card{
+    @apply
+    max-w-xl
+    text-center
+    mx-auto
+}
+mat-form-field{
+    @apply
+    w-full
+}
+mat-card-actions{
+    @apply
+    flex
+    justify-end
+    m-0
+    p-0
+}
+textarea{
+    resize: none!important
+    ;
+}
